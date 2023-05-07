@@ -1,5 +1,6 @@
 # FastFruits Online Retail Store
-FastFruits is an online retail store that sells fruits and vegetables. This project is a database management system (DBMS) that has been built using MySQL and Flask to manage the data for FastFruits.
+FastFruits is an online retail store that sells fruits and vegetables. We have tried to design the database and business logic layer for a Quick Commerce retail store specializing in fruits and vegetables. Fruits and vegetables are the most difficult Stock Keeping Unit category for most grocery companies owing to a standard wastage rate of 30%. Our system aims to minimize this wastage through algorithmic end-to-end lifecycle management of fruits and vegetables. <br>
+This project is a database management system (DBMS) that has been built using MySQL and Flask to manage the data for FastFruits.
 
 ![Alt text](Screenshot%202023-05-07%20150838.png "a title")
 ## Features
