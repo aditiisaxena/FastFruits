@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		form {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+		}
+		input {
+			display: block;
+			width: 100%;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+		}
+		button[type="submit"] {
+			display: block;
+			margin-top: 1rem;
+			padding: 0.5rem 1rem;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form id="login-form">
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+
+		<button type="submit">Login</button>
+	</form>
+
+	<script>
+		const form = document.querySelector('#login-form');
+
+		form.addEventListener('submit', function(event) {
+		  event.preventDefault();
+
+		  const email = document.querySelector('#email').value;
+		  const password = document.querySelector('#password').value;
+
+		  // Replace these hardcoded values with a database query to check if the user exists
+		  const validEmail = 'user@example.com';
+		  const validPassword = 'password123';
+
+		  if (email === validEmail && password === validPassword) {
+		    alert('Login successful!');
+		    // Redirect the user to the admin page
+		  } else {
+		    alert('Invalid email or password. Please try again.');
+		  }
+		});
+	</script>
+</body>
+</html>

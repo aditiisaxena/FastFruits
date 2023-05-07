@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/yourkitfontawesomekey.js" crossorigin="anonymous"></script>
+    <title>FastFruits</title>
+    <title>My Website</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/yourkitfontawesomekey.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Wait for the DOM to load
+    $(function() {
+      // Bind a click event handler to all cart buttons
+      $('.add-to-cart').click(function() {
+        // Get the name and price of the clicked item
+        var name = $(this).data('name');
+        var price = $(this).data('price');
+        
+        // Send an AJAX request to add the item to the cart
+        $.ajax({
+          method: 'POST',
+          url: 'add_to_cart.php',
+          data: {name: name, price: price},
+          success: function(response) {
+            // Alert the user that the item was added to the cart
+            alert(response);
+          },
+          error: function(xhr, status, error) {
+            // Alert the user if there was an error
+            alert('Error: ' + error);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body style="background: color #E3F0B4;">
+  <img src="FastFruits-removebg-preview.png" alt="Your Brand Logo" style="width: 250px;"class="logo">
+  <nav>
+    <a href="home.html"><i class="fas fa-home"></i> Home</a>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-list"></i> Categories
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="fruits.html">Fruits & Vegetables</a>
+        <a href="smoothies.html">Smoothies</a>
+        <a href="salad.htmlle">Salads</a>
+      </div>
+    </div>
+    <a href="#"><i class="fas fa-cart-plus"></i> Cart</a>
+    <a href="about.html"><i class="fas fa-pen"></i> About</a>
+    <a href="#"><i class="fas fa-mail-bulk"></i> Contact</a>
+    <div class="profile-icon">
+      <a href="login.html"><i class="fas fa-keyboard"></i> Login/SignUp</a>
+    </div>
+  </nav>
+  <div class="container-fluid mt-3">
+    <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: center;">
+      <th>S.No</th>
+      <th>Salads</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Added Date</th>
+      <th>Expiry Date</th>
+      <th>Cart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Greek Salad</td>
+      <td>431</td>
+      <td>470</td>
+      <td>2019-06-03</td>
+      <td>1992-03-16</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Caesar Salad</td>
+      <td>381</td>
+      <td>114</td>
+      <td>2019-05-21</td>
+      <td>2015-10-05</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Tomato and Mozzarella Salad</td>
+      <td>304</td>
+      <td>215</td>
+      <td>2001-09-07</td>
+      <td>2004-11-04</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Taco Salad</td>
+      <td>428</td>
+      <td>207</td>
+      <td>2005-08-14</td>
+      <td>1974-01-08</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Spinach Salad</td>
+      <td>396</td>
+      <td>105</td>
+      <td>1997-04-22</td>
+      <td>1981-06-24</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Wedge Salad</td>
+      <td>286</td>
+      <td>403</td>
+      <td>1974-07-20</td>
+      <td>1994-08-25</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Cobb Salad</td>
+      <td>433</td>
+      <td>412</td>
+      <td>1994-08-17</td>
+      <td>1982-08-08</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Nicoise Salad</td>
+      <td>442</td>
+      <td>130</td>
+      <td>2008-04-15</td>
+      <td>1997-07-15</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Beet Salad</td>
+      <td>177</td>
+      <td>296</td>
+      <td>1972-05-14</td>
+      <td>1970-07-21</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Quinoa Salad</td>
+      <td>405</td>
+      <td>280</td>
+      <td>1991-07-16</td>
+      <td>2007-07-09</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Kale Salad</td>
+      <td>355</td>
+      <td>344</td>
+      <td>2004-07-08</td>
+      <td>1989-08-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Broccoli Salad</td>
+      <td>391</td>
+      <td>190</td>
+      <td>1991-03-24</td>
+      <td>2010-09-13</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Pear and Blue Cheese Salad</td>
+      <td>139</td>
+      <td>163</td>
+      <td>1998-09-06</td>
+      <td>1974-05-09</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Arugula Salad</td>
+      <td>450</td>
+      <td>411</td>
+      <td>2001-06-29</td>
+      <td>1982-08-07</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Apple and Walnut Salad</td>
+      <td>479</td>
+      <td>270</td>
+      <td>1978-05-19</td>
+      <td>1999-01-14</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Roasted Carrot Salad</td>
+      <td>206</td>
+      <td>331</td>
+      <td>1988-02-09</td>
+      <td>1990-09-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Cucumber Salad</td>
+      <td>210</td>
+      <td>393</td>
+      <td>1980-03-18</td>
+      <td>2004-06-13</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Pesto Pasta Salad</td>
+      <td>247</td>
+      <td>263</td>
+      <td>1985-01-04</td>
+      <td>1999-12-17</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Strawberry Salad</td>
+      <td>363</td>
+      <td>498</td>
+      <td>2001-02-21</td>
+      <td>1992-03-02</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Caprese Salad</td>
+      <td>304</td>
+      <td>180</td>
+      <td>1987-06-25</td>
+      <td>2018-08-05</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Fruit Salad</td>
+      <td>421</td>
+      <td>202</td>
+      <td>1989-11-08</td>
+      <td>1973-05-31</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Southwestern Salad</td>
+      <td>403</td>
+      <td>307</td>
+      <td>1980-01-15</td>
+      <td>2015-08-09</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Chopped Salad</td>
+      <td>463</td>
+      <td>432</td>
+      <td>2018-05-28</td>
+      <td>2006-11-14</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Potato Salad</td>
+      <td>143</td>
+      <td>483</td>
+      <td>2010-04-18</td>
+      <td>1994-08-05</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Rainbow Salad</td>
+      <td>479</td>
+      <td>203</td>
+      <td>1975-07-21</td>
+      <td>1984-07-26</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Watermelon Salad</td>
+      <td>331</td>
+      <td>375</td>
+      <td>1993-12-04</td>
+      <td>1970-09-08</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Coleslaw</td>
+      <td>336</td>
+      <td>367</td>
+      <td>1979-07-30</td>
+      <td>2022-03-17</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>Balsamic Salad</td>
+      <td>408</td>
+      <td>238</td>
+      <td>1983-06-18</td>
+      <td>2012-06-24</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>Roasted Beet Salad</td>
+      <td>419</td>
+      <td>300</td>
+      <td>1977-06-06</td>
+      <td>1987-07-12</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>Crab Salad</td>
+      <td>211</td>
+      <td>493</td>
+      <td>2016-06-29</td>
+      <td>1974-03-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>Shrimp Salad</td>
+      <td>296</td>
+      <td>128</td>
+      <td>1988-05-07</td>
+      <td>1975-03-01</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Tuna Salad</td>
+      <td>127</td>
+      <td>276</td>
+      <td>1975-03-30</td>
+      <td>1977-03-25</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Chicken Salad</td>
+      <td>419</td>
+      <td>446</td>
+      <td>1973-12-19</td>
+      <td>1971-11-03</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Egg Salad</td>
+      <td>276</td>
+      <td>472</td>
+      <td>1985-01-15</td>
+      <td>1997-05-22</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>Greek Pasta Salad</td>
+      <td>184</td>
+      <td>416</td>
+      <td>1978-06-22</td>
+      <td>1977-09-02</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>Feta Salad</td>
+      <td>173</td>
+      <td>287</td>
+      <td>2015-12-27</td>
+      <td>1978-12-31</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>Zucchini Salad</td>
+      <td>184</td>
+      <td>375</td>
+      <td>2002-08-26</td>
+      <td>1993-08-14</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>Mango Salad</td>
+      <td>471</td>
+      <td>424</td>
+      <td>1971-09-09</td>
+      <td>1991-03-06</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>Cherry Salad</td>
+      <td>174</td>
+      <td>153</td>
+      <td>1988-04-20</td>
+      <td>2020-04-27</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>Pecan Salad</td>
+      <td>261</td>
+      <td>293</td>
+      <td>1989-08-06</td>
+      <td>1998-10-12</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>Avocado Salad</td>
+      <td>230</td>
+      <td>493</td>
+      <td>1971-01-14</td>
+      <td>2005-05-22</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>Lemon Salad</td>
+      <td>126</td>
+      <td>206</td>
+      <td>2007-02-09</td>
+      <td>2000-12-09</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>Peach Salad</td>
+      <td>278</td>
+      <td>336</td>
+      <td>2020-05-29</td>
+      <td>1983-06-30</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>Cantaloupe Salad</td>
+      <td>203</td>
+      <td>126</td>
+      <td>1971-03-30</td>
+      <td>2018-09-10</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>Raspberry Salad</td>
+      <td>446</td>
+      <td>466</td>
+      <td>2017-04-09</td>
+      <td>1985-02-13</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>Honeydew Salad</td>
+      <td>353</td>
+      <td>464</td>
+      <td>1989-02-18</td>
+      <td>1993-04-15</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>Papaya Salad</td>
+      <td>258</td>
+      <td>445</td>
+      <td>2001-06-15</td>
+      <td>1993-05-07</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>Plum Salad</td>
+      <td>479</td>
+      <td>155</td>
+      <td>2021-03-07</td>
+      <td>2000-08-10</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>Blueberry Salad</td>
+      <td>136</td>
+      <td>238</td>
+      <td>1983-12-29</td>
+      <td>1975-02-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>Strawberry and Spinach Salad</td>
+      <td>365</td>
+      <td>104</td>
+      <td>2016-07-22</td>
+      <td>1985-07-20</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>Blackberry Salad</td>
+      <td>379</td>
+      <td>293</td>
+      <td>1973-02-03</td>
+      <td>1983-04-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>Raisin Salad</td>
+      <td>279</td>
+      <td>378</td>
+      <td>1974-12-17</td>
+      <td>1991-12-06</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>Grape Salad</td>
+      <td>132</td>
+      <td>272</td>
+      <td>2010-04-09</td>
+      <td>1975-05-22</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>Mandarin Orange Salad</td>
+      <td>354</td>
+      <td>154</td>
+      <td>1987-07-24</td>
+      <td>1973-10-29</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>Pineapple Salad</td>
+      <td>406</td>
+      <td>392</td>
+      <td>1974-10-14</td>
+      <td>2008-02-07</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Cranberry Salad</td>
+      <td>128</td>
+      <td>491</td>
+      <td>2003-11-06</td>
+      <td>2018-06-27</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Coconut Salad</td>
+      <td>428</td>
+      <td>317</td>
+      <td>2011-05-23</td>
+      <td>1995-05-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>Banana Salad</td>
+      <td>382</td>
+      <td>399</td>
+      <td>2012-03-06</td>
+      <td>2019-07-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>Melon Salad</td>
+      <td>500</td>
+      <td>151</td>
+      <td>2004-07-03</td>
+      <td>2002-03-04</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Peanut Salad</td>
+      <td>119</td>
+      <td>170</td>
+      <td>2011-04-20</td>
+      <td>1974-02-17</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>Almond Salad</td>
+      <td>385</td>
+      <td>380</td>
+      <td>1991-03-02</td>
+      <td>2021-12-24</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>Walnut Salad</td>
+      <td>224</td>
+      <td>328</td>
+      <td>1981-12-03</td>
+      <td>2010-05-20</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>Pumpkin Seed Salad</td>
+      <td>353</td>
+      <td>286</td>
+      <td>2008-08-11</td>
+      <td>1995-07-07</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>Sunflower Seed Salad</td>
+      <td>492</td>
+      <td>414</td>
+      <td>2002-01-26</td>
+      <td>1988-01-18</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>Hazelnut Salad</td>
+      <td>243</td>
+      <td>140</td>
+      <td>2018-11-12</td>
+      <td>1995-11-22</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>Cashew Salad</td>
+      <td>310</td>
+      <td>418</td>
+      <td>2005-05-02</td>
+      <td>2010-07-27</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>Pecan and Apple Salad</td>
+      <td>178</td>
+      <td>463</td>
+      <td>2013-09-18</td>
+      <td>2015-02-01</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>Macadamia Salad</td>
+      <td>157</td>
+      <td>304</td>
+      <td>1988-08-22</td>
+      <td>1997-06-18</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>Peanut and Grape Salad</td>
+      <td>232</td>
+      <td>164</td>
+      <td>2011-11-15</td>
+      <td>2009-11-15</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>Almond and Cherry Salad</td>
+      <td>405</td>
+      <td>455</td>
+      <td>1978-06-22</td>
+      <td>2003-02-26</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>Walnut and Raspberry Salad</td>
+      <td>255</td>
+      <td>271</td>
+      <td>1996-04-03</td>
+      <td>2013-01-28</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>Pumpkin Seed and Mango Salad</td>
+      <td>333</td>
+      <td>387</td>
+      <td>1997-02-12</td>
+      <td>1970-01-18</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td>Sunflower Seed and Peach Salad</td>
+      <td>302</td>
+      <td>388</td>
+      <td>2007-06-17</td>
+      <td>1974-01-22</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>Hazelnut and Plum Salad</td>
+      <td>483</td>
+      <td>228</td>
+      <td>2009-02-15</td>
+      <td>2001-03-25</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>Cashew and Papaya Salad</td>
+      <td>406</td>
+      <td>292</td>
+      <td>1986-11-23</td>
+      <td>1983-08-11</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>Pecan and Pineapple Salad</td>
+      <td>271</td>
+      <td>311</td>
+      <td>1974-04-15</td>
+      <td>1982-07-21</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>Macadamia and Cantaloupe Salad</td>
+      <td>163</td>
+      <td>388</td>
+      <td>2015-08-28</td>
+      <td>1985-05-22</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>Tomato Cucumber Salad</td>
+      <td>260</td>
+      <td>114</td>
+      <td>2006-09-09</td>
+      <td>2015-12-08</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>Fruit Salad</td>
+      <td>333</td>
+      <td>330</td>
+      <td>2004-03-12</td>
+      <td>1977-12-29</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>Spinach Berry Salad</td>
+      <td>494</td>
+      <td>185</td>
+      <td>1985-11-05</td>
+      <td>1982-12-07</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>Greek Salad</td>
+      <td>180</td>
+      <td>373</td>
+      <td>1989-01-09</td>
+      <td>1970-01-15</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>82</td>
+      <td>Roasted Vegetable Salad</td>
+      <td>287</td>
+      <td>428</td>
+      <td>1981-01-21</td>
+      <td>2005-11-23</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>83</td>
+      <td>Caprese Salad</td>
+      <td>333</td>
+      <td>355</td>
+      <td>2021-05-19</td>
+      <td>1979-03-01</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>84</td>
+      <td>Carrot Raisin Salad</td>
+      <td>385</td>
+      <td>148</td>
+      <td>1974-09-24</td>
+      <td>1980-03-31</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>85</td>
+      <td>Quinoa Salad</td>
+      <td>453</td>
+      <td>332</td>
+      <td>1972-05-29</td>
+      <td>1974-06-21</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>86</td>
+      <td>Potato Salad</td>
+      <td>353</td>
+      <td>432</td>
+      <td>1987-01-09</td>
+      <td>1989-02-25</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>87</td>
+      <td>Coleslaw</td>
+      <td>401</td>
+      <td>121</td>
+      <td>1980-10-07</td>
+      <td>1977-08-05</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>88</td>
+      <td>Pasta Salad</td>
+      <td>128</td>
+      <td>352</td>
+      <td>1995-10-01</td>
+      <td>1985-01-01</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>89</td>
+      <td>Lentil Salad</td>
+      <td>375</td>
+      <td>235</td>
+      <td>1973-02-19</td>
+      <td>2014-10-24</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>Watermelon Feta Salad</td>
+      <td>500</td>
+      <td>422</td>
+      <td>1978-08-12</td>
+      <td>2010-03-09</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>91</td>
+      <td>Avocado Salad</td>
+      <td>170</td>
+      <td>264</td>
+      <td>2019-04-06</td>
+      <td>1996-01-10</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>92</td>
+      <td>Cobb Salad</td>
+      <td>137</td>
+      <td>269</td>
+      <td>1995-11-17</td>
+      <td>1996-03-06</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>93</td>
+      <td>Fennel Salad</td>
+      <td>221</td>
+      <td>455</td>
+      <td>1990-01-04</td>
+      <td>1977-10-09</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>94</td>
+      <td>Kale Salad</td>
+      <td>199</td>
+      <td>192</td>
+      <td>1982-07-08</td>
+      <td>2008-04-15</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>Orzo Salad</td>
+      <td>477</td>
+      <td>286</td>
+      <td>1987-11-15</td>
+      <td>1997-06-19</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>96</td>
+      <td>Mixed Greens Salad</td>
+      <td>486</td>
+      <td>327</td>
+      <td>2015-07-05</td>
+      <td>2005-04-02</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>97</td>
+      <td>Artichoke Salad</td>
+      <td>372</td>
+      <td>246</td>
+      <td>1988-01-22</td>
+      <td>1989-08-16</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>98</td>
+      <td>Beet Salad</td>
+      <td>151</td>
+      <td>500</td>
+      <td>2018-04-16</td>
+      <td>2010-02-12</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>99</td>
+      <td>Chickpea Salad</td>
+      <td>369</td>
+      <td>496</td>
+      <td>1997-07-30</td>
+      <td>2003-01-26</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>Raspberry Salad</td>
+      <td>231</td>
+      <td>253</td>
+      <td>1978-04-25</td>
+      <td>1982-04-22</td>
+      <td><button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>
